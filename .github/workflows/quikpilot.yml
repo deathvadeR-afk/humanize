@@ -13,7 +13,7 @@
 # arrives as a new pull request.
 #
 # templateVersion: 9
-# toolchains: python@3.15
+# toolchains: python@3.11
 # project: cmwz774vg0002etejsqdyq5h9
 # ============================================================================
 name: QuikPilot
@@ -100,7 +100,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: "3.15"
+          python-version: "3.11"
       - name: Set up Node.js for the QuikPilot runner
         uses: actions/setup-node@v6
         with:
@@ -123,7 +123,7 @@ jobs:
           restore-keys: quikpilot-deps-${{ runner.os }}-
 
       - name: Run QuikPilot
-        run: npx --yes @quikit/quikpilot-runner@9.3.0-rc.105
+        run: npx --yes @quikit/quikpilot-runner@9.3.0-rc.106
 
       - name: Save downloaded packages
         if: always() && steps.deps-cache.outputs.cache-hit != 'true'
